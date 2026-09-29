@@ -10,6 +10,11 @@ var travelRouter = require('./app_server/routes/travel');
 var app = express();
 // define handle bars variable
 var handlebars = require('hbs');
+// variables for API routes
+var apiRouter = require('./app_api/routes/index');
+
+// connect to database
+require('./app_api/models/db');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
@@ -27,6 +32,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/travel', travelRouter);
+// API endpoint route
+app.use('/api', apiRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
