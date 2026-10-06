@@ -8,14 +8,13 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-trip-listing',
+  standalone: true,
   imports: [CommonModule, TripCard],
   templateUrl: './trip-listing.html',
   styleUrl: './trip-listing.css',
   providers: [TripData],
 })
-
 export class TripListing implements OnInit {
-  
   trips!: Trip[];
   message: string = '';
 
@@ -31,7 +30,7 @@ export class TripListing implements OnInit {
   }
 
 private getStuff(): void {
-  this. tripDataService. getTrips()
+  this. tripDataService.getTrips()
   .subscribe({
     next: (value: any) => {
       this.trips = value;
@@ -50,7 +49,7 @@ private getStuff(): void {
   }
 
   ngOnInit(): void {
-    console.log('Error: ' + Error);
+    console.log('ngOnInit');
     this.getStuff();
   }
 }

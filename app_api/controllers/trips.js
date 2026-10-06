@@ -18,7 +18,7 @@ const tripsList = async(req, res) => {
     { // Database returned no data
         return res
             .status(404)
-            .json(err);
+            .json({ message: "No trips found"});
     } else { // Return resulting trip list
         return res
             .status (200)
@@ -43,7 +43,7 @@ const tripsFindByCode = async(req, res) => {
     { // Database returned no data
         return res
             .status(404)
-            .json(err);
+            .json({ message: "tripCode not found"});
     } else { // Return resulting trip list
         return res
             .status (200)
@@ -72,7 +72,7 @@ const tripsAddTrip = async(req, res) => {
     { // Database returned no data
         return res
             .status(404)
-            .json(err);
+            .json({ message: "Failed to add"});
     } else { // Return resulting trip list
         return res
             .status (200)
@@ -80,7 +80,7 @@ const tripsAddTrip = async(req, res) => {
     }
 };
 
-// PUT:  /trips/:tripCode - Add a new Trip
+// PUT:  /trips/:tripCode - Update a new Trip
 // Regardless of outcome, response must include HTML status code
 // and JSON message to the requesting client
 const tripsUpdateTrip = async(req, res) => {
@@ -104,7 +104,7 @@ const tripsUpdateTrip = async(req, res) => {
     { // Database returned no data
         return res
             .status(404)
-            .json(err);
+            .json({ message: "tripCode not found"});
     } else { // Return resulting trip list
         return res
             .status (200)
@@ -112,11 +112,33 @@ const tripsUpdateTrip = async(req, res) => {
     }
 };
 
+// DELETE:  /trips/:tripCode - Delete a new Trip
+// Regardless of outcome, response must include HTML status code
+// and JSON message to the requesting client
+const tripsDeleteTrip = async(req, res) => {
+    const q = await Model
+    .findOneAndDelete (
+        { 'code' : req.params.tripCode }
+    )
+    .exec ();
+
+    if(!q)
+    { // Database returned no data
+        return res
+            .status(404)
+            .json({ message: "tripCode not found"});
+    } else { // Return resulting trip list
+        return res
+            .status (200)
+            .json(q);
+    }
+};
 
 // exported constant from tripsList file
 module.exports = {
     tripsList,
     tripsFindByCode,
     tripsAddTrip,
-    tripsUpdateTrip
+    tripsUpdateTrip,
+    tripsDeleteTrip
 };
