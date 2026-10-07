@@ -5,19 +5,17 @@ import { Trip } from '../models/trip';
 
 @Component({
   selector: 'app-trip-card',
+  standalone: true,
   imports: [CommonModule],
-  templateUrl: './trip-card.html',
-  styleUrl: './trip-card.css',
+  templateUrl: './trip-card.component.html',
+  styleUrl: './trip-card.component.css',
 })
-export class TripCard implements OnInit{
-
+export class TripCardComponent implements OnInit {
   @Input('trip') trip: any;
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
   public editTrip(trip: Trip) {
     localStorage.removeItem('tripCode');
