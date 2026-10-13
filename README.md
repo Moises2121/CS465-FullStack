@@ -28,9 +28,9 @@ Database layer was tested under MongoDB Compass to verify seed and ISO dates
 Front end layer was verified by looking at the rendering after PUT from admin side and Angular listing
 
 ## Reflection
-This course taught me how to migrate from a static HTML throug public to a full MEAN stack with MVC, API and SPA. I learned to use the Express routing/controller/viewer flows, HandleBars templating with partials, Mongoose schema and connection handling, REST API design with single responsibility controllers and Angular architecture with services and observables.
+This course taught me how to migrate from a static HTML through the public directory to a full MEAN stack with MVC, API and SPA. I learned to implement Express routing with controller/view flows, HandleBars templating with partials, Mongoose schema and connection handling, REST API design with single responsibility controllers like tripList and tripListByCOde , as well as Angular architecture with services and observables.
 
-Debugging and troubleshooting such as the 404 css path and white screen helped me remember that code must be developed with a security and reusability mindset - using tools such as github to compare my branches can also help future developers see the roadblocks and mitigation steps which can help me strenghten my value as a full-stack candidate in the field.
+Debugging challenges such as the 404 css pathing mismatch and white screen (due to wrong angular version) tauight me that code must be built with a security and reusability mindset. Using tools such as github to compare my branches can also help future developers see the roadblocks and mitigation steps. That mindset has strenghten my value as a full-stack candidate in the field. Thank you for all the feedback provided throughout the course!
 
 
 
