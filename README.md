@@ -14,10 +14,10 @@ Since trip data is document based, NoSQL was implemented. MongoDBs limited to AC
 ## Functionality
 JSON is the data format that ties everything together such as travel.js, trips.json which parses array and renders the content instead of hardcoded list items. The JSON flows from MongoDB via API tripList and tripsFindByCode to Angular TripDataService via HTTP client to components.
 
-Module 1 - Fixed asses path and stylesheet rename for Express static serving
-Module 2-3 - Pull all the logic into controllers/routes and partials
-Module 4 - Two controller API split keep each other function to one job
-Module 6- Pulling trip cards into their own component, listing component only loops and deciding how the layout changes 
+Module 1 - Fixed asses path and stylesheet rename for Express static serving<br>
+Module 2-3 - Pull all the logic into controllers/routes and partials<br>
+Module 4 - Two controller API split keep each other function to one job<br>
+Module 6- Pulling trip cards into their own component, listing component only loops and deciding how the layout changes<br>
 
 ## Testing
 API layer was tested on port 3000 via Postman and browser for GET /api /trips, GET /api/trips/:tripcode using DAWR210315, POST tripsAddTrip, PUT for admin edits and verifying the `200` responses.
