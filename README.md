@@ -1,10 +1,11 @@
 # CS465-FullStack
 CS465 Full Stack Development with MEAN
+---
 
-##Architecture
+## Architecture
 
-##Functionality
+## Functionality
 
-##Testing
+## Testing
 
-##Reflection
+## Reflection
